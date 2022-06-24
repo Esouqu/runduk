@@ -19,7 +19,11 @@ sound.forEach(s => s.volume = 0.3);
 //cp pickup volume
 sound[2].volume = 0.1;
 //set saved best score
-score.innerHTML = `Лучший результат: ${localStorage.getItem('best')} рун`;
+if (localStorage.getItem('best') === 'null') {
+    score.innerHTML = `Лучший результат: 0 рун`;
+} else {
+    score.innerHTML = `Лучший результат: ${localStorage.getItem('best')} рун`;
+}
 
 const player = {
     runes: {
