@@ -233,8 +233,8 @@ class CountDownTimer {
     }
 }
 
-let timer = new CountDownTimer(5),
-timeObj = CountDownTimer.parse(5);
+let timer = new CountDownTimer(90),
+timeObj = CountDownTimer.parse(90);
 
 format(timeObj.minutes, timeObj.seconds);
 
