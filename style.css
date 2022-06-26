@@ -169,22 +169,67 @@ button {
     user-select: none;
 }
 .rune {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 50px;
     top: calc(85px * 1);
     left: calc(85px * 4);
-    transform: skew(45deg, 334deg) translate3d(2px, -10px, 0);
+    transform: skew(43deg, 334deg) translate3d(2px, -20px, 0);
+    transform-style: preserve-3d;
     animation: .8s rune infinite alternate;
     filter: drop-shadow(1px 2px 0px rgb(0, 0, 0));
     z-index: 1;
 }
+.rune::before {
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(35, 35, 35, 0.4);
+    transform: rotateX(25deg) rotateY(333deg) translateY(30px) translateX(0px);
+    transform-origin: center;
+    animation: shadow .8s infinite alternate;
+    z-index: -1;
+}
 .jug {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 80px;
     top: calc(85px * 4);
     left: calc(85px * 1);
-    transform: skew(45deg, 334deg) translate3d(-5px, -40px, 0);
+    transform: skew(43deg, 334deg) translate3d(-5px, -40px, 0);
     animation: .6s jug infinite alternate;
-    filter: drop-shadow(3px -2px 2px rgb(247, 25, 25));
+    filter: drop-shadow(0px 0px 3px rgb(247, 25, 25));
+    transform-style: preserve-3d;
     z-index: 2;
+}
+.jug::before {
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    width: 70px;
+    height: 100px;
+    transform: rotateX(25deg) rotateY(339deg) translateY(50px) translateX(4px);
+    transform-origin: center;
+    animation: colorChange .3s infinite alternate;
+}
+.jug::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 20px rgb(35, 35, 35, 0.6);
+    background-color: rgb(35, 35, 35, 0.3);
+    transform: rotateX(25deg) rotateY(339deg) translateY(60px) translateX(4px);
+    transform-origin: center;
+    z-index: -1;
 }
 /**/
 
@@ -258,12 +303,12 @@ button {
 }
 
 @keyframes rune {
-    0% { transform: skew(45deg, 334deg) translate3d(2px, -10px, 0); }
-    100% { transform: skew(45deg, 334deg) translate3d(2px, -10px, 15px); }
+    0% { transform: skew(43deg, 334deg) translate3d(2px, -10px, 0); }
+    100% { transform: skew(43deg, 334deg) translate3d(2px, -10px, 15px); }
 }
 @keyframes jug {
-    0% { transform: skew(45deg, 334deg) translate3d(-5px, -40px, 0); }
-    100% { transform: skew(45deg, 334deg) translate3d(-5px, -40px, 5px); }
+    0% { transform: skew(43deg, 334deg) translate3d(-5px, -40px, 0); }
+    100% { transform: skew(43deg, 334deg) translate3d(-5px, -40px, 3px); }
 }
 @keyframes start {
     0% {
@@ -273,17 +318,42 @@ button {
     }
     100% {
         height: 0;
-        filter: drop-shadow(0 0 1px white);
+        filter: drop-shadow(0 0 3px #232323);
         font-size: 150px;
         color: rgb(255, 69, 36);
         background-color: unset;
     }
 }
 @keyframes startUp {
-    0% {
-        bottom: 0;
+    0% { bottom: 0; }
+    100% { bottom: 200px; }
+}
+@keyframes colorChange {
+    0% { 
+        width: 65px;
+        height: 65px;
+        border-right: 5px solid rgb(255, 144, 124);
+        border-left: 5px solid rgb(255, 144, 124);
+        border-bottom: 5px solid rgb(255, 144, 124);
+     }
+    100% { 
+        width: 60px;
+        height: 60px;
+        border-right: 5px solid rgb(255, 69, 36);
+        border-left: 5px solid rgb(255, 69, 36);
+        border-bottom: 5px solid rgb(255, 69, 36);
     }
-    100% {
-        bottom: 200px;
+}
+@keyframes shadow {
+    0% { 
+        width: 40px;
+        height: 40px;
+        
+     }
+    100% { 
+        background-color: rgb(35, 35, 35, 0.2);
+        transform: rotateX(25deg) rotateY(333deg) translateY(60px) translateX(0px);
+        width: 20px;
+        height: 20px;
     }
 }
