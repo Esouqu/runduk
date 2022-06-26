@@ -172,7 +172,7 @@ button {
     width: 50px;
     top: calc(85px * 1);
     left: calc(85px * 4);
-    transform: skew(45deg, 334deg) translateX(2px) translateY(-10px) translateZ(0);
+    transform: skew(45deg, 334deg) translate3d(2px, -10px, 0);
     animation: .8s rune infinite alternate;
     filter: drop-shadow(1px 2px 0px rgb(0, 0, 0));
     z-index: 1;
@@ -181,7 +181,7 @@ button {
     width: 80px;
     top: calc(85px * 4);
     left: calc(85px * 1);
-    transform: skew(45deg, 334deg) translateX(-5px) translateY(-40px) translateZ(0);
+    transform: skew(45deg, 334deg) translate3d(-5px, -40px, 0);
     animation: .6s jug infinite alternate;
     filter: drop-shadow(3px -2px 2px rgb(247, 25, 25));
     z-index: 2;
@@ -258,12 +258,12 @@ button {
 }
 
 @keyframes rune {
-    0% { transform: skew(45deg, 334deg) translateX(2px) translateY(-10px) translateZ(0px);}
-    100% { transform: skew(45deg, 334deg) translateX(2px) translateY(-10px) translateZ(15px);}
+    0% { transform: skew(45deg, 334deg) translate3d(2px, -10px, 0); }
+    100% { transform: skew(45deg, 334deg) translate3d(2px, -10px, 15px); }
 }
 @keyframes jug {
-    0% { transform: skew(45deg, 334deg) translateX(-5px) translateY(-40px) translateZ(0px);}
-    100% { transform: skew(45deg, 334deg) translateX(-5px) translateY(-40px) translateZ(5px);}
+    0% { transform: skew(45deg, 334deg) translate3d(-5px, -40px, 0); }
+    100% { transform: skew(45deg, 334deg) translate3d(-5px, -40px, 5px); }
 }
 @keyframes start {
     0% {
