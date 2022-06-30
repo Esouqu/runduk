@@ -27,7 +27,7 @@ score.innerHTML = `Лучший результат: ${localStorage.getItem('best
 const player = {
     runes: {
         amount: 0,
-        step: [20, 40, 55, 75],
+        step: [15, 25, 35, 50],
         add: () => player.runes.amount += 1,
         reset: () => {
             player.runes.amount = 0; 
@@ -233,8 +233,8 @@ class CountDownTimer {
     }
 }
 
-let timer = new CountDownTimer(90),
-timeObj = CountDownTimer.parse(90);
+let timer = new CountDownTimer(60),
+timeObj = CountDownTimer.parse(60);
 
 format(timeObj.minutes, timeObj.seconds);
 
